@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+
 import './App.css';
 
+import { Link, Route } from 'react-router-dom';
+import HomePage from './component/HomePage';
+import BestPage from './component/BestPage';
+
+import UserInsert from './component/UserInsert';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  return (  
+    <div className='App'>
+      <div className='menu'>
+        <Link to="/">홈</Link>
+        <Link to="/best/list">Best</Link>
+
+      </div>
+      
+
+
+
+      <Route path="/" component={HomePage} exact/>
+      <Route path="/best" component={BestPage}/>
+     
+      <Route path="/user/insert" component={UserInsert}/>
+        
+    
     </div>
+
+    
   );
 }
 
